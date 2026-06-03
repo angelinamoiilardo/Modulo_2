@@ -1,0 +1,132 @@
+---
+title: "Presentación_módulo2"
+author: "Paulina Maselli"
+date: "2026-04-22"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+---
+title: "Ejercicio 2: Suma de un vector con for"
+author: "Grupo: Las Valientes"
+output: ioslides_presentation
+---
+
+## Enunciado
+
+Calcular la suma de todos los valores del vector `Secuencia_dni`.
+
+## Vector de trabajo
+Para escribir el vector utilzamos el comenando 'r', y escribimos:
+
+`Secuencia_dni <-(1:8)`
+
+Luego pedimos que lo muestre:
+```{r}
+Secuencia_dni <-(1:8)
+Secuencia_dni
+```
+---
+
+## Idea
+
+- Recorrer el vector
+- Acumular la suma en una variable
+
+
+## Inicialización
+Para iniciar utilizamos comando 'r' y escribimos:
+
+total <- 0
+Valor_final <- length(Secuencia_dni)
+
+```{r}
+total <- 0
+Valor_final <- length(Secuencia_dni)
+
+total
+Valor_final
+```
+
+---
+
+## Recorrido con for
+Para el recorrido en el comando 'r':
+
+total <- 0
+
+for(i in 1:Valor_final) {
+  total <- total + Secuencia_dni[i]
+}
+
+```{r}
+total <- 0
+
+for(i in 1:Valor_final) {
+  total <- total + Secuencia_dni[i]
+}
+```
+
+---
+
+## Paso a paso
+Para que el vector vaya acumulando valores:
+
+total <- 0
+
+for(i in 1:length(Secuencia_dni)) {
+
+  total <- total + Secuencia_dni[i]
+  
+  print(paste("Paso", i,
+  
+              "- Valor:", Secuencia_dni[i],
+              
+              "- Total acumulado:", total))
+}
+
+---
+```{r}
+total <- 0
+
+for(i in 1:length(Secuencia_dni)) {
+  total <- total + Secuencia_dni[i]
+  print(paste("Paso", i,
+              "- Valor:", Secuencia_dni[i],
+              "- Total acumulado:", total))
+}
+```
+
+---
+
+## Resultado
+Finalmente podemos ver el resultado usando en 'r' y pidiendo 'total':
+
+```{r}
+total
+```
+
+---
+
+## Alternativa
+También podemos ver el resultado usando 'sum(Secuencia_dni)', lo cual hace la suma automáticamente y es más rápido
+
+```{r}
+sum(Secuencia_dni)
+```
+
+---
+
+## Conclusión
+
+- Se usa un `for` para recorrer el vector  
+- `total` acumula la suma  
+- Se suma elemento por elemento  
+- También se puede usar `sum()`  
